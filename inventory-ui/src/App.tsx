@@ -113,9 +113,8 @@ const App = () => {
     }
   };
 
-  const selectedItem = Array.isArray(items)
-    ? items.find((item) => item.id === Number(adjustId))
-    : undefined;
+  const inventory = Array.isArray(items) ? items : [];
+  const selectedItem = inventory.find((item) => item.id === Number(adjustId));
 
   return (
     <div className="app-shell">
@@ -164,7 +163,7 @@ const App = () => {
               Select item
               <select value={adjustId} onChange={(event) => setAdjustId(event.target.value)}>
                 <option value="">Choose an item</option>
-                {items.map((item) => (
+                {inventory.map((item) => (
                   <option key={item.id} value={item.id}>
                     {item.name} ({item.quantity})
                   </option>
@@ -210,11 +209,11 @@ const App = () => {
 
         {loading ? (
           <p>Loading...</p>
-        ) : items.length === 0 ? (
+        ) : inventory.length === 0 ? (
           <p>No inventory recorded yet.</p>
         ) : (
           <ul className="inventory-list">
-            {items.map((item) => (
+            {inventory.map((item) => (
               <li key={item.id}>
                 <div>
                   <strong>{item.name}</strong>
