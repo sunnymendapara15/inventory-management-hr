@@ -1,0 +1,154 @@
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background-color: #f4f6fb;
+  color: #141926;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6fb;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto 3rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  margin-bottom: 0.25rem;
+  font-size: 2.4rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 18px 45px rgba(20, 25, 38, 0.08);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.92rem;
+  color: #425165;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+input,
+select,
+button {
+  border-radius: 6px;
+  border: 1px solid #d1d8e0;
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #5c6ac4;
+  border-color: transparent;
+}
+
+button {
+  background: #5c6ac4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #4a58c1;
+}
+
+.inventory-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inventory-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eceef3;
+}
+
+.inventory-list strong {
+  font-size: 1.05rem;
+}
+
+.inventory-list p {
+  margin: 0.25rem 0 0;
+  color: #65748b;
+}
+
+.quantity {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status,
+.error {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 999px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.status {
+  background: #e6f4ea;
+  color: #1d6e45;
+}
+
+.error {
+  background: #ffe3e3;
+  color: #9b1a1a;
+}
+
+.muted {
+  font-size: 0.85rem;
+  color: #7a859a;
+  margin-top: 0.5rem;
+}
