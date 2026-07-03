@@ -29,7 +29,8 @@ const App = () => {
     setError("");
     try {
       const response = await axios.get<InventoryItem[]>("/api/inventory");
-      setItems(response.data);
+      const inventory = Array.isArray(response.data) ? response.data : [];
+      setItems(inventory);
     } catch (err) {
       setError("Unable to load inventory. Is the backend running?");
     } finally {
@@ -112,7 +113,9 @@ const App = () => {
     }
   };
 
-  const selectedItem = items.find((item) => item.id === Number(adjustId));
+  const selectedItem = Array.isArray(items)
+    ? items.find((item) => item.id === Number(adjustId))
+    : undefined;
 
   return (
     <div className="app-shell">
