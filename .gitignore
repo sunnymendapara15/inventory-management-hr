@@ -1,0 +1,22 @@
+# Visual Studio / .NET
+bin/
+obj/
+*.db
+*.sqlite
+*.log
+inventory.db
+.env
+.env.*
+
+# Node/Vite
+node_modules/
+dist/
+build/
+.npm/
+
+# IDEs
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
